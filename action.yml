@@ -1,0 +1,14 @@
+name: CPT
+author: Dmitry Arkhipov <grisumbras@gmail.com>
+description: Runs conan_package_tools
+branding:
+  icon: package
+  color: blue
+inputs:
+  build-script:
+    description: Path to the build script
+    required: false
+    default: build.py
+runs:
+  using: node12
+  main: main.js
