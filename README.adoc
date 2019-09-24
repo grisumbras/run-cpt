@@ -1,14 +1,17 @@
 = actions-cpt
 :toc: preamble
 
+[link=https://github.com/grisumbras/actions-cpt/actions]
+image::https://github.com/grisumbras/actions-cpt/workflows/ci/badge.svg[Build status]
+
 ____
-GitHub Action that run conan_package_tools
+GitHub Action that runs conan_package_tools
 ____
 
 
 == Usage
 
-Put this into your workflow file:
+Example usage:
 
 [source,yaml]
 ----
@@ -48,4 +51,4 @@ Patches welcome!
 
 
 == License
-link:LICENSE[BSL-1.0] (C) 2018 Dmitry Arkhipov
+link:LICENSE[BSL-1.0] (C) 2019 Dmitry Arkhipov
