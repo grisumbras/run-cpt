@@ -4,3 +4,48 @@
 ____
 GitHub Action that run conan_package_tools
 ____
+
+
+== Usage
+
+Put this into your workflow file:
+
+[source,yaml]
+----
+uses: grisumbras/actions-cpt@latest
+with:
+  build-script: conan/build.py
+----
+
+You can set environment variables that control Conan and CPT behaviour using
+`env` key:
+
+[source,yaml]
+----
+- uses: grisumbras/actions-cpt@latest
+  env:
+    CONAN_REMOTES: https://api.bintray.com/conan/bincrafters/public-conan
+----
+
+Additionally, if `CONAN_USERNAME` is not specified, the first part of
+`GITHUB_REPOSITORY` (before slash) will be used.
+
+
+== Inputs
+
+=== `build-script`
+
+Path to the build script. Given `build-script: x/y/z.py`, the action will run
+`python x/y/z.py`.
+
+
+== Maintainer
+Dmitry Arkhipov <grisumbras@gmail.com>
+
+
+== Contributing
+Patches welcome!
+
+
+== License
+link:LICENSE[BSL-1.0] (C) 2018 Dmitry Arkhipov
