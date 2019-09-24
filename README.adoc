@@ -1,8 +1,8 @@
-= actions-cpt
+= run-cpt
 :toc: preamble
 
-[link=https://github.com/grisumbras/actions-cpt/actions]
-image::https://github.com/grisumbras/actions-cpt/workflows/ci/badge.svg[Build status]
+[link=https://github.com/grisumbras/run-cpt/actions]
+image::https://github.com/grisumbras/run-cpt/workflows/ci/badge.svg[Build status]
 
 ____
 GitHub Action that runs conan_package_tools
@@ -15,7 +15,7 @@ Example usage:
 
 [source,yaml]
 ----
-uses: grisumbras/actions-cpt@latest
+uses: grisumbras/run-cpt@latest
 with:
   build-script: conan/build.py
 ----
@@ -25,7 +25,7 @@ You can set environment variables that control Conan and CPT behaviour using
 
 [source,yaml]
 ----
-- uses: grisumbras/actions-cpt@latest
+- uses: grisumbras/run-cpt@latest
   env:
     CONAN_REMOTES: https://api.bintray.com/conan/bincrafters/public-conan
 ----

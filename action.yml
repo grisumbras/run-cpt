@@ -1,4 +1,4 @@
-name: CPT
+name: run-cpt
 author: Dmitry Arkhipov <grisumbras@gmail.com>
 description: Runs conan_package_tools
 branding:

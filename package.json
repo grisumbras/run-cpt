@@ -1,5 +1,5 @@
 {
-  "name": "cpt",
+  "name": "run-cpt",
   "version": "0.0.1",
   "description": "Runs conan_package_tools",
   "main": "main.js",
