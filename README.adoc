@@ -2,12 +2,11 @@
 :toc: preamble
 
 [link=https://github.com/grisumbras/run-cpt/actions]
-image::https://github.com/grisumbras/run-cpt/workflows/ci/badge.svg[Build status]
+image::https://github.com/grisumbras/run-cpt/workflows/Build/badge.svg?branch=master[Build status]
 
 ____
 GitHub Action that runs conan_package_tools
 ____
-
 
 == Usage
 
@@ -33,22 +32,17 @@ You can set environment variables that control Conan and CPT behaviour using
 Additionally, if `CONAN_USERNAME` is not specified, the first part of
 `GITHUB_REPOSITORY` (before slash) will be used.
 
+=== Inputs
 
-== Inputs
-
-=== `build-script`
-
+build-script::
 Path to the build script. Given `build-script: x/y/z.py`, the action will run
 `python x/y/z.py`.
-
 
 == Maintainer
 Dmitry Arkhipov <grisumbras@gmail.com>
 
-
 == Contributing
 Patches welcome!
-
 
 == License
 link:LICENSE[BSL-1.0] (C) 2019 Dmitry Arkhipov

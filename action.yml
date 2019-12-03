@@ -1,6 +1,6 @@
 name: run-cpt
 author: Dmitry Arkhipov <grisumbras@gmail.com>
-description: Runs conan_package_tools
+description: GitHub Action that runs conan_package_tools
 branding:
   icon: package
   color: blue
