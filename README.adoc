@@ -1,0 +1,50 @@
+= run-cpt
+:toc: preamble
+
+[link=https://github.com/grisumbras/run-cpt/actions]
+image::https://github.com/grisumbras/run-cpt/workflows/Build/badge.svg?branch=master[Build status]
+
+____
+GitHub Action that runs conan_package_tools
+____
+
+== Usage
+Example usage:
+
+[source,yaml]
+----
+uses: grisumbras/run-cpt@latest
+with:
+  build-script: conan/build.py
+----
+
+You can set environment variables that control Conan and CPT behaviour using
+`env` key:
+
+[source,yaml]
+----
+- uses: grisumbras/run-cpt@latest
+  env:
+    CONAN_REMOTES: https://api.bintray.com/conan/bincrafters/public-conan
+----
+
+Additionally, if `CONAN_USERNAME` is not specified, the first part of
+`GITHUB_REPOSITORY` (before slash) will be used.
+
+=== Inputs
+build-script::
+Path to the build script. Given `build-script: x/y/z.py`, the action will run
+`python x/y/z.py`. `build.py` by default.
+install::
+Install conan_package_tools before running the build script if the value is not
+`no`. If the value is `latest` install the latest version, otherwise install
+the version equal to that value. `latest` by default.
+
+== Maintainer
+Dmitry Arkhipov <grisumbras@gmail.com>
+
+== Contributing
+Patches welcome!
+
+== License
+link:LICENSE[BSL-1.0] (C) 2019 Dmitry Arkhipov
