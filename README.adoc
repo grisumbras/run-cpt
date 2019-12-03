@@ -9,7 +9,6 @@ GitHub Action that runs conan_package_tools
 ____
 
 == Usage
-
 Example usage:
 
 [source,yaml]
@@ -33,10 +32,13 @@ Additionally, if `CONAN_USERNAME` is not specified, the first part of
 `GITHUB_REPOSITORY` (before slash) will be used.
 
 === Inputs
-
 build-script::
 Path to the build script. Given `build-script: x/y/z.py`, the action will run
-`python x/y/z.py`.
+`python x/y/z.py`. `build.py` by default.
+install::
+Install conan_package_tools before running the build script if the value is not
+`no`. If the value is `latest` install the latest version, otherwise install
+the version equal to that value. `latest` by default.
 
 == Maintainer
 Dmitry Arkhipov <grisumbras@gmail.com>
