@@ -1,6 +1,6 @@
 {
   "name": "run-cpt",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "GitHub Action that runs conan_package_tools",
   "main": "main.js",
   "author": "Dmitry Arkhipov <grisumbras@gmail.com>",
