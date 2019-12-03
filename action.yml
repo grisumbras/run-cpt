@@ -9,6 +9,10 @@ inputs:
     description: Path to the build script
     required: false
     default: build.py
+  install:
+    description: what version of conan_package_tools to install
+    required: false
+    default: latest
 runs:
   using: node12
   main: main.js

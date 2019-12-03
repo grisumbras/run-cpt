@@ -12,7 +12,25 @@ function get_username() {
 };
 
 
+function get_cpt_version() {
+  const version = core.getInput('install');
+  let result = "conan_package_tools";
+  if ("no" == version) {
+    return null;
+  } if ("latest" != version) {
+    result = `${result}==${version}`;
+  }
+  return result;
+};
+
+
 async function run() {
+  const cpt_version = get_cpt_version();
+  if (cpt_version) {
+    console.log(`Installing ${cpt_version}...`)
+    await exec.exec('pip', ["install", cpt_version]);
+  }
+
   const opts
     = { env: Object.assign({CONAN_USERNAME: get_username()}, process.env)
       };
@@ -25,4 +43,5 @@ async function run() {
 module.exports =
   { run: run
   , get_username: get_username
+  , get_cpt_version: get_cpt_version
   };

@@ -21,9 +21,43 @@ describe('with pre-set GITHUB_REPOSITORY', () => {
 });
 
 
+describe('with default install input', () => {
+  beforeAll(() => { process.env.INPUT_INSTALL = "latest"; });
+
+  test('get_cpt_version', () => {
+    expect(run.get_cpt_version()).toBe("conan_package_tools");
+  });
+
+  afterAll(() => { delete process.env.INPUT_INSTALL; });
+})
+
+
+describe('with custon install input', () => {
+  beforeAll(() => { process.env.INPUT_INSTALL = "1.20.0"; });
+
+  test('get_cpt_version', () => {
+    expect(run.get_cpt_version()).toBe("conan_package_tools==1.20.0");
+  });
+
+  afterAll(() => { delete process.env.INPUT_INSTALL; });
+})
+
+
+describe('with disabled install', () => {
+  beforeAll(() => { process.env.INPUT_INSTALL = "no"; });
+
+  test('get_cpt_version', () => {
+    expect(run.get_cpt_version()).toBe(null);
+  });
+
+  afterAll(() => { delete process.env.INPUT_INSTALL; });
+})
+
+
 describe('running', () => {
   const cwd = process.cwd();
   beforeAll(() => {
+    process.env.INPUT_INSTALL = "no";
     process.env.CONAN_USERNAME = "john_doe";
     process.env["INPUT_BUILD-SCRIPT"] = "build.py";
     process.chdir("test");
@@ -37,5 +71,6 @@ describe('running', () => {
     process.chdir(cwd);
     delete process.env.INPUT_BUILD_SCRIPT;
     delete process.env.CONAN_USERNAME;
+    delete process.env.INPUT_INSTALL;
   });
 });
