@@ -35,6 +35,11 @@ async function run() {
     = { env: Object.assign({CONAN_USERNAME: get_username()}, process.env)
       };
   const script = core.getInput('build-script');
+  const work_dir = core.getInput('work-dir');
+  if (work_dir) {
+    console.log(`Setting working directory to ${work_dir}...`);
+    await process.chdir(work_dir);
+  }
   console.log(`Running conan_package_tools with script ${script}...`)
   await exec.exec('python', [core.getInput('build-script')], opts);
 }
