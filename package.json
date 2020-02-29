@@ -9,8 +9,20 @@
     "test": "jest"
   },
   "dependencies": {
-    "@actions/core": "^1.1.1",
-    "@actions/exec": "^1.0.1",
+    "@actions/core": "^1.2.2",
+    "@actions/exec": "^1.0.3",
     "jest": "^24.9.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trassir/run-cpt.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/trassir/run-cpt/issues"
+  },
+  "homepage": "https://github.com/trassir/run-cpt#readme"
 }
