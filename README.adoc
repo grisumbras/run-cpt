@@ -16,6 +16,7 @@ Example usage:
 uses: grisumbras/run-cpt@latest
 with:
   build-script: conan/build.py
+  work-dir: project_files/sources
 ----
 
 You can set environment variables that control Conan and CPT behaviour using
@@ -35,6 +36,10 @@ Additionally, if `CONAN_USERNAME` is not specified, the first part of
 build-script::
 Path to the build script. Given `build-script: x/y/z.py`, the action will run
 `python x/y/z.py`. `build.py` by default.
+work-dir::
+Change a current working directory to the defined in this variable. The build-script
+will be run from this directory. Defaults to empty string, that is:
+do not change the working directory.
 install::
 Install conan_package_tools before running the build script if the value is not
 `no`. If the value is `latest` install the latest version, otherwise install

@@ -9,6 +9,10 @@ inputs:
     description: Path to the build script
     required: false
     default: build.py
+  work-dir:
+    description: Build script will be run from this directory, defaults to a current working directory
+    required: false
+    default:
   install:
     description: what version of conan_package_tools to install
     required: false
