@@ -69,7 +69,7 @@ describe('running', () => {
 
   afterAll(() => {
     process.chdir(cwd);
-    delete process.env.INPUT_BUILD_SCRIPT;
+    delete process.env['INPUT_BUILD-SCRIPT'];
     delete process.env.CONAN_USERNAME;
     delete process.env.INPUT_INSTALL;
   });
@@ -92,8 +92,8 @@ describe('running with custom work-dir', () => {
 
   afterAll(() => {
     process.chdir(cwd);
-    delete process.env.INPUT_WORK_DIR;
-    delete process.env.INPUT_BUILD_SCRIPT;
+    delete process.env['INPUT_WORK-DIR'];
+    delete process.env['INPUT_BUILD-SCRIPT'];
     delete process.env.CONAN_USERNAME;
     delete process.env.INPUT_INSTALL;
   });
