@@ -26,7 +26,7 @@ inputs:
     required: false
     default:
   docker-images:
-    description: sets CONAN_DOCKER_IMAGES env var, set to 'clear' to delete this env var. Emty string - do nothing.
+    description: sets CONAN_DOCKER_IMAGE env var, set to 'clear' to delete this env var. Emty string - do nothing.
     required: false
     default:
 runs:
