@@ -18,11 +18,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trassir/run-cpt.git"
+    "url": "git+https://github.com/grisumbras/run-cpt.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/trassir/run-cpt/issues"
+    "url": "https://github.com/grisumbras/run-cpt/issues"
   },
-  "homepage": "https://github.com/trassir/run-cpt#readme"
+  "homepage": "https://github.com/grisumbras/run-cpt#readme"
 }
