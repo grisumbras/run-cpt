@@ -78,7 +78,12 @@ async function run() {
     console.log(`Installing ${cpt_version}...`)
     await exec.exec('pip', ["install", cpt_version]);
   }
-
+  const use_lf_endings = core.getInput('lf-endings');
+  if (use_lf_endings) {
+    // Fix a faulse-positive package is outdated error due to differences in line-endings,
+    // see https://docs.conan.io/en/latest/faq/using.html?highlight=crlf#packages-got-outdated-when-uploading-an-unchanged-recipe-from-a-different-machine
+    await exec.exec('git', ['config', '--global', 'core.autocrlf', 'input']);
+  }
   const script = core.getInput('build-script');
   const work_dir = core.getInput('work-dir');
   if (work_dir) {
