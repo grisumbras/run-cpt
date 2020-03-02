@@ -114,24 +114,24 @@ describe('setup compiler', () => {
 
 describe('setup docker_images', () => {
   beforeEach(() => {
-    process.env.CONAN_DOCKER_IMAGES = 'conanio/gcc48';
+    process.env.CONAN_DOCKER_IMAGE = 'conanio/gcc48';
   })
   test('no changes', () => {
     run.setup_docker_images();
-    expect(process.env.CONAN_DOCKER_IMAGES).toBe('conanio/gcc48');
+    expect(process.env.CONAN_DOCKER_IMAGE).toBe('conanio/gcc48');
   })
   test('custom image', () => {
     process.env['INPUT_DOCKER-IMAGES'] = 'my_docker_image';
     run.setup_docker_images();
-    expect(process.env.CONAN_DOCKER_IMAGES).toBe('my_docker_image');
+    expect(process.env.CONAN_DOCKER_IMAGE).toBe('my_docker_image');
   })
   test('clear image', () => {
     process.env['INPUT_DOCKER-IMAGES'] = 'clear';
     run.setup_docker_images();
-    expect('CONAN_DOCKER_IMAGES' in process.env).toBe(false);
+    expect('CONAN_DOCKER_IMAGE' in process.env).toBe(false);
   })
   afterEach(() => {
-    delete process.env.CONAN_DOCKER_IMAGES;
+    delete process.env.CONAN_DOCKER_IMAGE;
     delete process.env['INPUT_DOCKER-IMAGES'];
   })
 })

@@ -45,7 +45,7 @@ Install conan_package_tools before running the build script if the value is not
 `no`. If the value is `latest` install the latest version, otherwise install
 the version equal to that value. `latest` by default.
 
-The following parameters allow you to customize conan and conan_package_tools behaviour. It is conrolled by environment variables and there is no way to undefine a variable from a workflow file after it was set. For example, you cannot set CONAN_DOCKER_IMAGES and then unset it. This does not allow you to use strategy.matrix to run several jobs based on variables. With these parameters you can setup the behaviour without using environment variables from a workflow file. Values from these parameters override the values of the corresponding environment variables, so you can setup default environment variables and modify the behaviour of a conan for some jobs/steps exclusivly.
+The following parameters allow you to customize conan and conan_package_tools behaviour. It is conrolled by environment variables and there is no way to undefine a variable from a workflow file after it was set. For example, you cannot set CONAN_DOCKER_IMAGE and then unset it. This does not allow you to use strategy.matrix to run several jobs based on variables. With these parameters you can setup the behaviour without using environment variables from a workflow file. Values from these parameters override the values of the corresponding environment variables, so you can setup default environment variables and modify the behaviour of a conan for some jobs/steps exclusivly.
 
 compiler::
 Sets which compiler conan should use. Use this option in combination with compiler-versions. Defaults to an empty string. conan_package_tools will choose a compiler based on environment variables in this case. Other supported values are:
@@ -59,7 +59,7 @@ to setup, this options sets its value:
 * CONAN_APPLE_CLANG_VERIONS
 * CONAN_VISUAL_VERIONS
 docker-images::
-Overrides or clears CONAN_DOCKER_IMAGES environment variable. Set to an empty string to do nothing. Set to 'clear' to undefine the environment variable. Defaults to empty string.
+Overrides or clears CONAN_DOCKER_IMAGE environment variable. Set to an empty string to do nothing. Set to 'clear' to undefine the environment variable. Defaults to empty string.
 
 == Maintainer
 Dmitry Arkhipov <grisumbras@gmail.com>

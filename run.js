@@ -63,11 +63,11 @@ function setup_docker_images() {
   }
   console.log(`Setting docker image...`);
   if (docker_images === 'clear') {
-    delete process.env.CONAN_DOCKER_IMAGES;
-    console.log(`CONAN_DOCKER_IMAGES env var is deleted`);
+    delete process.env.CONAN_DOCKER_IMAGE;
+    console.log(`CONAN_DOCKER_IMAGE env var is deleted`);
   } else {
-    process.env.CONAN_DOCKER_IMAGES = docker_images;
-    console.log(`CONAN_DOCKER_IMAGES env var is set to ${docker_images}`);
+    process.env.CONAN_DOCKER_IMAGE = docker_images;
+    console.log(`CONAN_DOCKER_IMAGE env var is set to ${docker_images}`);
   }
 }
 
