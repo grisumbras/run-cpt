@@ -29,10 +29,6 @@ inputs:
     description: sets CONAN_DOCKER_IMAGE env var, set to 'clear' to delete this env var. Emty string - do nothing.
     required: false
     default:
-  lf-endings:
-    description: Automatically convert crlf into lf endings when git is used. Requires a git repository.
-    required: false
-    default: false
 runs:
   using: node12
   main: main.js
