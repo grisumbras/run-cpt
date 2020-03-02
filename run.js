@@ -79,9 +79,6 @@ async function run() {
     await exec.exec('pip', ["install", cpt_version]);
   }
 
-  const opts
-    = { env: Object.assign({CONAN_USERNAME: get_username()}, process.env)
-      };
   const script = core.getInput('build-script');
   const work_dir = core.getInput('work-dir');
   if (work_dir) {
@@ -90,6 +87,9 @@ async function run() {
   }
   setup_compiler();
   setup_docker_images();
+  const opts
+    = { env: Object.assign({CONAN_USERNAME: get_username()}, process.env)
+      };
   console.log(`Running conan_package_tools with script ${script}...`)
   await exec.exec('python', [core.getInput('build-script')], opts);
 }
