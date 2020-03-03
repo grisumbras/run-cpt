@@ -69,7 +69,31 @@ describe('running', () => {
 
   afterAll(() => {
     process.chdir(cwd);
-    delete process.env.INPUT_BUILD_SCRIPT;
+    delete process.env['INPUT_BUILD-SCRIPT'];
+    delete process.env.CONAN_USERNAME;
+    delete process.env.INPUT_INSTALL;
+  });
+});
+
+
+describe('running with custom work-dir', () => {
+  const cwd = process.cwd();
+  beforeAll(() => {
+    process.env.INPUT_INSTALL = "no";
+    process.env.CONAN_USERNAME = "john_doe";
+    process.env["INPUT_BUILD-SCRIPT"] = "../build.py";
+    process.env["INPUT_WORK-DIR"] = "work-dir-change";
+    process.chdir("test");
+  });
+
+  test('run() runs', () => {
+    return run.run().then(() => { return true; });
+  });
+
+  afterAll(() => {
+    process.chdir(cwd);
+    delete process.env['INPUT_WORK-DIR'];
+    delete process.env['INPUT_BUILD-SCRIPT'];
     delete process.env.CONAN_USERNAME;
     delete process.env.INPUT_INSTALL;
   });
