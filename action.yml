@@ -13,6 +13,18 @@ inputs:
     description: what version of conan_package_tools to install
     required: false
     default: latest
+  compiler:
+    description: a compiler to use. An empty string if you set compiler version via env vars. One of ['gcc', 'apple_clang', 'vs'] otherwise.
+    required: false
+    default:
+  compiler-versions:
+    description: list of comma-separated versions or an empty string if you set compiler version via environment variables. Required if you've set compiler option.
+    required: false
+    default:
+  docker-image:
+    description: sets CONAN_DOCKER_IMAGE environment variable, set to 'clear' to delete this environment variable. An empty string - do nothing.
+    required: false
+    default:
 runs:
   using: node12
   main: main.js
